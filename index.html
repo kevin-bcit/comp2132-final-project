@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Final Project - Dice | Homepage | COMP2132 Kevin Ng</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@700&family=Raleway:wght@300&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/animation.css">
+
+        <script src="scripts/jquery-3.7.0.min.js" defer></script>
+        <script src="scripts/jquery.cycle2.min.js" defer></script>    
+        <script src="scripts/Dice.js" defer></script>
+        <script src="scripts/Player.js" defer></script>
+        <script src="scripts/Game.js" defer></script>
+        <script src="scripts/ScoreSystem.js" defer></script>
+        <script src="scripts/final-project.js" defer></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <h1>FINAL PROJECT</h1>
+                <div id="banner"></div>
+                <h6>by Kevin Ng</h6>
+            </header>
+            <main>
+                <section class="main_section">
+                    <div id="intro_paragraph">
+                        <h3 id="headline">The dice game</h3>
+                        
+                    </div>
+                    <article class="left_board">
+                        <h3 class="name">Player1</h3>
+                        <div class="avatar"></div>
+                        <div class="dice"></div>
+                        <div class="scoreBkg">
+                            <h2 class="scoreDiff">x</h2>
+                        </div>
+                        <div class="result"></div>
+                    </article>
+                    <article class="right_board">
+                        <h3 class="name">Player2</h3>
+                        <div class="avatar"></div>
+                        <div class="dice"></div>
+                        <div class="scoreBkg">
+                            <h2 class="scoreDiff">x</h2>
+                        </div>
+                        <div class="result"></div>
+                    </article>
+                    <article class="control">
+                        <h3>x</h3>
+                        <div id="new-game-btn" class="green-btn-grow">NEW GAME</div>
+                        <div id="roll-dice-btn" class="red-btn-grow">ROLL DICES</div>
+                    </article>
+                    <article class="message">
+                        <h2>How to play?</h2>
+                            <h5>Instruction</h5>
+                                <ol>
+                                    <li><p>Click the "New Game" Button to start/reset the game anytime.</p></li>
+                                    <li><p>Click the "Roll Dices" Button to roll the dices for each players. 
+                                        Each click will start another round until the game finish.</p></li>
+                                    <li><p>The winner will be the player with highest score.</p></li>
+                                    <li><p>To select the players and number of round again, please reload the page</p></li>
+                                </ol>
+                            <h5>Scoring</h5>
+                                <ul>
+                                    <li><p>If any of the players two dice comes up as a 1 then the score 
+                                        for that round for the player is 0</p></li>
+                                    <li><p>If the player rolls a pair of the same numbers then the players 
+                                        score is the total of the two dice times 2</p></li>
+                                    <li><p>If the player rolls any other combination of dice other than the 
+                                        ones mentioned above then the players score is the total value of 
+                                        the two dice</p></li>
+                                </ul>
+
+                    </article>
+                </section>
+            </main>
+            <footer>
+                <div class="footer_div">
+                    <h2>Final Project - The Dice Game</h2>
+                    <p>COMP 2312 BCIT Project</p>
+                </div>
+                <div class="footer_div">
+                    <h2>Developer</h2>
+                    <p>Kevin Ng</p>
+                </div>
+            </footer>
+            <section id="pop" class="pop-style">
+                <h3>x</h3>
+                <div id="pop-box" class="pop-box-style">
+                    <button class="close-pop">&#x2715;</button>
+                    <div id="pop-content"></div>
+                </div>
+            </section>
+            <section id="pop-player" class="pop-style">
+                <div id="pop-player-box" class="pop-box-style">
+                    <label for="round">Number of round (default is 3) <input type="number" id="round" min="1" max="9" name="round" value="3"></label>
+                    <button class="close-pop">&#x2715;</button>
+                    <h4 id="pop-player-heading">Please select your player</h4>
+                    <div id="pop-player-content"></div>
+                    <div id="pop-player-message"></div>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>

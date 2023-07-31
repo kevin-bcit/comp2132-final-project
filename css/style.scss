@@ -1,0 +1,367 @@
+@charset "utf-8";
+
+@import "animation.scss";
+
+/*common color variables:*/
+$primary_color: #02642b;
+$secondary_color: #9cd8a5;
+$border_color1: #eff318;
+$border_color2: #035326ee;
+
+@mixin border-with-shadow($b_color, $b_radius){
+    border: solid 5px $b_color;
+    border-radius: $b_radius;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 5px, rgba(0, 0, 0, 0.3) 0px 10px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+}
+
+html{
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif; 
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body:after {
+    display: none;
+    content: url("../images/new_game_btn_hv.png") url("../images/roll_dices_btn_hv.png");
+  }
+
+#banner {
+    /* background-image: url("../images/bk_poker.jpg"); */
+    background-position: center center;
+    background-size: 100% auto;
+    min-height: 60px;
+    position: relative;
+
+}
+
+h1{
+    position: absolute;
+    z-index: 1;
+    color: $primary_color;
+    padding: 0.5%;
+    padding-bottom: 0;
+    margin: 0;
+}
+
+
+h2{
+    font-family: 'Red Rose', cursive;
+    font-size: 1.5rem;
+    color: $primary_color;
+}
+
+h3{
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+}
+
+h4 {
+    font-family: "Red Rose", cursive;
+    font-size: 3rem;
+    color: $border_color1;
+  }
+
+h6{
+    padding: 0 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+strong{
+    font-size: 1.5rem;
+    color:rgb(179, 2, 2);
+}
+
+main{
+    flex : 1;
+    margin: 10px;
+    margin-bottom: 50px;
+    background-image: url("../images/dice_bg.jpg");
+    background-repeat: repeat repeat;
+}
+
+article{
+    @include border-with-shadow($border_color2, 10px);
+    background-color: $secondary_color;
+    margin: 10px;
+    padding: 20px;
+
+}
+
+#intro_paragraph {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .main_section {
+    display: flex;
+    flex-direction: column;
+  }
+
+.left_board, .right_board{
+    /*for items within the game board*/
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.control{
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+.control h3{
+    display: none;
+}
+
+.name{
+    width: 99%;
+}
+
+.avatar{
+    width: 99%;
+    
+}
+
+.avatar img{
+    width: 200px;
+    height: 200px;
+    @include border-with-shadow($border_color1, 5px);
+}
+
+.dice{
+    text-align: center;
+    padding-top: 5%;
+    min-height: 80px;
+    width: 50%;
+}
+
+.dice img{
+    padding-left: 5%;
+}
+
+scoreBkg{
+    position: relative;
+}
+
+.scoreDiff{
+    position: absolute;
+    font-size: 3rem;
+    width: 49%;
+}
+
+
+.score-animate{
+    animation: fadeIn_score 2000ms;
+}
+
+#new-game-btn {
+    content: url("../images/new_game_btn.png");
+    width: 200px;
+}
+
+.green-btn-grow{
+    animation: btn-yellow 2000ms infinite;
+    @include button_grow("btn-yellow", 3px, 15px,  #00561b, #fcff48);
+}
+
+.red-btn-grow{
+    animation: btn-red 2000ms infinite;
+    @include button_grow("btn-red", 3px, 15px,  #cb0407, rgb(255, 0, 0));
+}
+
+#new-game-btn:hover {
+    content: url("../images/new_game_btn_hv.png");
+    width: 200px;
+}
+
+#new-game-btn:active {
+    transform: scale(1.1);
+}
+
+#roll-dice-btn{
+    content: url("../images/roll_dices_btn.png");
+    width: 200px;
+}
+
+#roll-dice-btn:hover{
+    content: url("../images/roll_dices_btn_hv.png");
+    width: 200px;
+}
+  
+#roll-dice-btn:active {
+    transform: scale(1.1);
+}
+
+
+footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-bottom: 50px;
+    background-color: rgba(33, 32, 32, 0.7); 
+    color: #ffffff;
+}
+
+.footer_div{
+    width: 100%;
+
+}
+
+.footer_div h5, p{
+    margin: 3px 0px;
+    
+}
+
+#wrapper{
+    display: flex;
+    flex-direction: column;
+    max-width:1024px;
+    margin:auto;
+    min-height: 100vh;
+	border:solid 2px #609bb7;
+
+}
+
+img{
+	max-width:100%;
+	height:auto;
+
+}
+
+
+#roll-dice-btn{
+    visibility: hidden;
+}
+
+#pop h3{
+    display: none;
+}
+
+.pop-style{
+    display: none;
+    position:fixed;
+    top:0px;
+    left:0px;    
+    width:100vw;
+    height:100vh;    
+	background-color: rgba(97, 97, 97, 0.8);
+    opacity: 0;
+}
+
+.pop-box-style{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%, -50%);
+    text-align: center;
+	max-width:800px;
+	min-width:400px;
+	padding:20px;
+	border-radius:10px;
+	background-color: $primary_color;
+	color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 5px, rgba(0, 0, 0, 0.3) 0px 10px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.close-pop{
+	background-color: white;
+	color:$primary_color;
+	border-radius: 20%;
+	font-weight: bold;
+	
+	cursor:pointer;
+	
+	position:absolute;
+	top:10px;
+	right:10px;
+}
+#close-pop:hover, 
+#close-pop:focus, 
+#close-pop:active{
+	background-color: #f9e19b;
+	color:white;
+	transform: scale(1.2);
+}
+
+#pop-content img{
+    width: 300px;
+    height: 300px;
+    animation: btn-yellow 2000ms infinite;
+    @include button_grow("btn-yellow", 3px, 15px,  #00561b, #fcff48);
+}
+
+#pop-player-content{
+    display: flex;
+}
+
+#pop-player-content figure{
+    margin: 5px;
+}
+
+
+.sp-img{
+    min-width: 150px;
+    min-height: 150px;
+}
+
+
+.fadeInAnime{
+    animation: fadeIn 1s;
+}
+
+.fadeOutAnime{
+    animation: fadeOut 1s;
+  }
+
+@media (min-width:600px){
+
+    h1{
+        font-size: 2rem;
+    }
+    .main_section{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 10px 0;
+    }
+
+    #intro_paragraph{
+        width: 100%;
+    }
+    
+    article{
+        width: 48%;
+    }
+
+    .control{
+        width: 99%;
+    }
+
+    .message{
+        width: 99%;
+    }
+
+    
+    footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-bottom: 50px;
+        
+    }
+    
+    .footer_div{
+        width: 45%;
+    }
+}
+
+@media (min-width: 1000px){
+    h1{
+        font-size: 3rem;
+    }
+}

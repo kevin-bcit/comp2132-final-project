@@ -1,0 +1,41 @@
+
+@mixin button_grow($name, $start, $finish, $color_start, $color_brightest){
+    @keyframes #{$name} {
+        0% {
+        filter: drop-shadow(0 0 $start $color_start);
+        }
+        50% {
+        filter: drop-shadow(0 0 $finish $color_brightest);
+        }
+        100% {
+        filter: drop-shadow(0 0 5px $color_start);
+        }
+    }
+}
+
+@keyframes fadeIn_score {
+    0% {
+        opacity: 0;
+        bottom: 20%;
+      }
+      50% {
+        opacity: 1;
+        bottom: 40%;
+        color:#eff318;
+        
+      }
+      100% {
+        opacity: 0;
+        bottom: 40%;
+      }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
