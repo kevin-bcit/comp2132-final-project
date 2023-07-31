@@ -2,6 +2,7 @@
  * Final Project - The Dice Game
  * Creator: Kevin Ng
  * BCIT-id: A01341525
+ * repo: https://github.com/kevin-bcit/comp2132-final-project
  */
 const headline = $("#headline");
 const intro = $("#intro_paragraph");
